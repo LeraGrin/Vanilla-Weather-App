@@ -21,6 +21,7 @@
   </head>
   <body>
     <div class="container">
+      <div weather-app-wrapper>
       <div class="card">
         <div id="topOfPage">
           <div class="row">
@@ -50,13 +51,16 @@
               <span id="currentCondition"></span>
             </div>
             <div class="current-city" id="currentCity"></div>
-            <span class="temperature" id="temperature"></span
+            <div class="d-flex weather-temperature">
+              <img src="src/img/sunny.svg" width="30" alt="sunny" id="icon"/>
+                <span class="temperature" id="temperature"></span
             ><span class="units">°C </span>
+            </div>
           </div>
           <div class="col-4" id="conditions">
             <ul>
-              <li>Humidity: <span id="humid"> 50 </span>%</li>
-              <li>Wind: <span id="wind"> 14 </span> km/h</li>
+              <li>Humidity: <span id="humid"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
             </ul>
           </div>
         </div>
@@ -83,6 +87,7 @@
             <div>Cloudy, 19°C</div>
           </div>
         </div>
+      </div>
       </div>
     </div>
     <span id="signature"
