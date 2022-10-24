@@ -17,7 +17,9 @@
 
 .current-city {
   font-family: "Anek Malayalam", sans-serif;
-  font-size: large;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 28.8px;
   margin-top: 10px;
 }
 .current-weather {
@@ -25,12 +27,19 @@
   font-size: smaller;
   opacity: 85%;
 }
+
 ul {
   list-style: none;
-  font-family: "Anek Malayalam", sans-serif;
-  font-size: 15px;
-  display: block;
-  margin-top: 50px;
+  color: rgb(135, 135, 135);
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+#condition {
+  color: rgb(135, 135, 135);
+  font-size: 14px;
+  margin-bottom: 0;
 }
 
 #weekdays {
@@ -42,4 +51,6 @@ ul {
   font-family: "Roboto Mono", monospace;
   font-size: smaller;
   opacity: 80%;
+  position: relative;
+  margin-left: 10px;
 }
