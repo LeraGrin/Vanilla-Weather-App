@@ -1,3 +1,45 @@
-h1 {
-  color: red;
+.card {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+}
+.form-inline {
+  display: flex;
+  width: auto;
+}
+.btn {
+  font-family: "Roboto Mono", monospace;
+}
+
+.btn:hoover {
+  cursor: pointer;
+}
+
+.current-city {
+  font-family: "Anek Malayalam", sans-serif;
+  font-size: large;
+  margin-top: 10px;
+}
+.current-weather {
+  font-family: "Anek Malayalam", sans-serif;
+  font-size: smaller;
+  opacity: 85%;
+}
+ul {
+  list-style: none;
+  font-family: "Anek Malayalam", sans-serif;
+  font-size: 15px;
+  display: block;
+  margin-top: 50px;
+}
+
+#weekdays {
+  font-family: "Anek Malayalam", sans-serif;
+  position: relative;
+  margin-left: 10px;
+}
+#currentDate {
+  font-family: "Roboto Mono", monospace;
+  font-size: smaller;
+  opacity: 80%;
 }

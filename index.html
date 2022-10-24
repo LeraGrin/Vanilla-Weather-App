@@ -5,17 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
-    <title>Vanilla Weather App</title>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/f9798b78f5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Vanilla Weather App</title>
   </head>
   <body>
     <div class="container">
-      <h1>Hello, World!</h1>
+      <div class="card">
+        <section id="topOfPage">
+          <div class="row">
+            <div class="col-12">
+              <form class="form-inline" id="form">
+                <div class="form-group">
+                  <input type="search" id="inputCity" autofocus/>
+                  <button type="submit" class="btn btn-primary mb-1 btn-sm">
+                    Search
+                  </button>
+                  <button id="currentLocBtn" class="btn btn-success mb-1 btn-sm
+                ">Current weather</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-5" id="currentDate">
+            </div>
+        </section>
+        <br />
+        <div class="row">
+          <div class="col-8">
+            <span>Condition: </span><span id="currentCondition"></span>
+            <div class="current-city" id="currentCity"></div>
+            <span class="temperature" id="temperature"></span
+              ><span class="units">°C
+              </span>
+          </div>
+          <div class="col-4" id="conditions">
+            <ul>
+              <li>Humidity: <span id="humid"> 50 </span>%</li>
+              <li>Wind: <span id="wind"> 14 </span> km/h</li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="row" id="weekdays">
+          <div class="col-3">
+            <img src="img/sunny.svg" width="45px" />
+            SAT
+            <div>Sunny, 25°C</div>
+          </div>
+          <div class="col-3">
+            <img src="img/rainu.svg" width="45px" />
+            SUN
+            <div>Rainy, 21°C</div>
+          </div>
+          <div class="col-3">
+            <img src="img/thunderstorm.svg" width="45px" />
+            MON
+            <div>Storm, 18°C</div>
+          </div>
+          <div class="col-3">
+            <img src="img/cloudy.svg" width="45px" />
+            TUE
+            <div>Cloudy, 19°C</div>
+          </div>
+        </div>
+      </div>
+      <div><a href="https://githu
     </div>
     <script src="src/app.js"></script>
   </body>
