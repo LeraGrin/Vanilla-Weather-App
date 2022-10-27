@@ -23,19 +23,22 @@ function formatDate(timestamp) {
 
 function displayWeather(response) {
   console.log(response.data);
-  document.querySelector("#currentCity").innerHTML = response.data.name;
+  document.querySelector("#currentCity").innerHTML = response.data.city;
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
+    response.data.temperature.current
   );
-  document.querySelector("#humid").innerHTML = response.data.main.humidity;
+  document.querySelector("#humid").innerHTML =
+    response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
   document.querySelector("#currentCondition").innerHTML =
-    response.data.weather[0].main;
+    response.data.condition.description;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", `${response.data.condition.icon_url}`);
 }
 
 function searchCity(city) {
-  let apiKey = "b47fdf6445cd8b64ab889be77dbe56d4";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiKey = "f48132e9ad6t75094b2a9333aba47o8f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   axios.get(apiUrl).then(displayWeather);
 }
 
@@ -58,10 +61,10 @@ function convertToCelsius(event) {
 }
 
 function searchLocation(position) {
-  let apiKey = "b47fdf6445cd8b64ab889be77dbe56d4";
+  let apiKey = "f48132e9ad6t75094b2a9333aba47o8f";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
 function getCurrentLocation(event) {

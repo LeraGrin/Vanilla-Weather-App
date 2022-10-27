@@ -21,6 +21,8 @@ ul {
 }
 .btn {
   font-family: "Roboto Mono", monospace;
+  margin-right: 33px;
+  position: relative;
 }
 
 .btn:hoover {
@@ -73,6 +75,7 @@ ul {
 #currentDate {
   font-family: "Roboto Mono", monospace;
   font-size: smaller;
+  font-weight: bold;
   opacity: 80%;
   position: relative;
   margin-left: 10px;
