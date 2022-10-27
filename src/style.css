@@ -40,6 +40,25 @@ ul {
   opacity: 85%;
 }
 
+.temperature {
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 1;
+  margin-top: 10px;
+}
+.units {
+  position: relative;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+#icon {
+  float: left;
+  height: 64px;
+  width: 64px;
+  margin-right: 6px;
+}
+
 #condition {
   color: rgb(135, 135, 135);
   font-size: 14px;
