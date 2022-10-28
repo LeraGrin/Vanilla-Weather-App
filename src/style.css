@@ -55,6 +55,11 @@ ul {
   margin-top: 10px;
 }
 
+.active {
+  color: rgb(135, 135, 135);
+  cursor: default;
+}
+
 #icon {
   float: left;
   height: 64px;
