@@ -22,25 +22,39 @@ function formatDate(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return days[day];
+  }
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 4) {
+      forecastHTML += `
           <div class="col-3">
-          <div class="weather-forecast-date">${day}
+          <div class="weather-forecast-date">${formatDay(forecastDay.time)}
           </div>
-            <img src="src/img/sunny.svg" width="45px" />
-            <div class="forecast-temp">25°C</div>
-            <div class="forecast-condition">Sunny</div>
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+              forecastDay.condition.icon
+            }.png" width="45px" />
+            <div class="forecast-temp">${Math.round(
+              forecastDay.temperature.day
+            )}°C</div>
+            <div class="forecast-condition">${
+              forecastDay.condition.description
+            }</div>
           </div>
       `;
+    }
   });
 
-  forecastHMTL = forecastHTML + `</div>`;
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
