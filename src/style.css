@@ -23,7 +23,6 @@ ul {
 .btn {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-right: 33px;
-  position: relative;
 }
 
 .btn:hoover {
