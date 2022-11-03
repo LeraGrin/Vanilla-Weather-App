@@ -21,6 +21,28 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-3">
+          <div class="weather-forecast-date">${day}
+          </div>
+            <img src="src/img/sunny.svg" width="45px" />
+            <div class="forecast-temp">25°C</div>
+            <div class="forecast-condition">Sunny</div>
+          </div>
+      `;
+  });
+
+  forecastHMTL = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeather(response) {
   document.querySelector("#currentCity").innerHTML = response.data.city;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -92,3 +114,4 @@ searchForm.addEventListener("submit", handleSubmit);
 dateElement.innerHTML = formatDate(currentTime);
 
 searchCity("Amsterdam");
+displayForecast();

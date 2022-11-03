@@ -73,10 +73,9 @@ ul {
   margin-bottom: 0;
 }
 
-#weekdays {
+#forecast {
   font-family: "Anek Malayalam", sans-serif;
   position: relative;
-  margin-left: 10px;
 }
 #currentDate {
   font-family: "Roboto Mono", monospace;
